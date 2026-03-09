@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,7 +16,6 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -62,7 +63,6 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
-                // Total Balance
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -102,7 +102,6 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
 
-                // Quick Actions
                 Row(
                   children: [
                     ElevatedButton(
@@ -152,10 +151,10 @@ class HomePage extends StatelessWidget {
                             right: 10,
                             bottom: 0,
                             child: Transform.rotate(
-                              angle: 0.01, // different angle per box
+                              angle: 0.01,
                               child: Image.asset(
-                                'lib/Images/send-line-skew.png', // replace with your image path
-                                width: 50, // different size per box
+                                'lib/Images/send-line-skew.png',
+                                width: 50,
                                 height: 70,
                                 fit: BoxFit.contain,
                               ),
@@ -190,10 +189,10 @@ class HomePage extends StatelessWidget {
                             right: 8,
                             bottom: 0,
                             child: Transform.rotate(
-                              angle: 0.01, // different angle per box
+                              angle: 0.01,
                               child: Image.asset(
-                                'lib/Images/add.png', // replace with your image path
-                                width: 90, // different size per box
+                                'lib/Images/add.png',
+                                width: 90,
                                 height: 70,
                                 fit: BoxFit.contain,
                               ),
@@ -228,10 +227,10 @@ class HomePage extends StatelessWidget {
                             right: 20,
                             bottom: 0,
                             child: Transform.rotate(
-                              angle: 0.001, // different angle per box
+                              angle: 0.001,
                               child: Image.asset(
-                                'lib/Images/arrow-up-right.png', // replace with your image path
-                                width: 70, // different size per box
+                                'lib/Images/arrow-up-right.png',
+                                width: 70,
                                 height: 70,
                                 fit: BoxFit.contain,
                               ),
@@ -267,10 +266,10 @@ class HomePage extends StatelessWidget {
                             right: 8,
                             bottom: 0,
                             child: Transform.rotate(
-                              angle: 0.001, // different angle per box
+                              angle: 0.001,
                               child: Image.asset(
-                                'lib/Images/flash.png', // replace with your image path
-                                width: 90, // different size per box
+                                'lib/Images/flash.png',
+                                width: 90,
                                 height: 70,
                                 fit: BoxFit.contain,
                               ),
@@ -283,61 +282,90 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
 
-                // Daily Rewards
                 Column(
                   children: [
                     SizedBox(height: 20),
 
-                    // Daily Rewards Section
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFFFC107), // yellow background
+                        color: const Color(0xFFFFC107),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Top Row
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // Texts
                               Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
                                   Text(
                                     "Daily Rewards",
                                     style: TextStyle(
-                                      fontSize: 16,
+                                      color: Color(0xFF1A3B8E),
+                                      fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   SizedBox(height: 4),
                                   Text(
                                     "Don't lose your streak",
-                                    style: TextStyle(fontSize: 12),
+                                    style: TextStyle(
+                                      color: Color(0xFF5C6881),
+                                      fontSize: 12,
+                                    ),
                                   ),
                                 ],
                               ),
 
-                              // Day Badge
                               Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 4,
-                                ),
+                                width: 80,
+                                height: 80,
+                                clipBehavior: Clip.hardEdge,
                                 decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: const Text(
-                                  "Day 3",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Positioned(
+                                      top: 20,
+                                      width: 86,
+                                      child: Image.asset(
+                                        'lib/Images/gift (1).png',
+                                        fit: BoxFit.fill,
+                                        color: Color(0xFFE7B90E),
+                                      ),
+                                    ),
+
+                                    Positioned(
+                                      top: 3,
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 10,
+                                          vertical: 4,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFF1065FC),
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
+                                        ),
+                                        child: const Text(
+                                          "Day 3",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
@@ -345,35 +373,36 @@ class HomePage extends StatelessWidget {
 
                           const SizedBox(height: 12),
 
-                          // Progress Section
                           Row(
                             children: [
-                              // Progress Bar
-                              Expanded(
+                              SizedBox(
                                 child: Container(
-                                  height: 6,
+                                  height: 16,
+                                  width: 145,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Color(0xFFE7B90E),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: FractionallySizedBox(
                                     alignment: Alignment.centerLeft,
-                                    widthFactor: 0.4, // progress amount
+                                    widthFactor: 0.4,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Colors.blue,
+                                        color: Color(0xFF1065FC),
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-
                               const SizedBox(width: 10),
 
                               const Text(
                                 "3/7 Days",
-                                style: TextStyle(fontSize: 12),
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF5C6881),
+                                ),
                               ),
                             ],
                           ),
@@ -388,11 +417,10 @@ class HomePage extends StatelessWidget {
         ),
       ),
 
-      // Bottom Navigation
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(20.0), // space from screen edges
+        padding: const EdgeInsets.all(20.0),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(25), // rounded corners
+          borderRadius: BorderRadius.circular(25),
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -400,12 +428,12 @@ class HomePage extends StatelessWidget {
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 8,
-                  offset: Offset(0, 4), // shadow below the bar
+                  offset: Offset(0, 4),
                 ),
               ],
             ),
             child: BottomNavigationBar(
-              currentIndex: 0, // make sure to set the current selected tab
+              currentIndex: 0,
               selectedItemColor: Colors.blue,
               unselectedItemColor: Colors.grey.shade500,
               backgroundColor: Colors.grey.shade100,
