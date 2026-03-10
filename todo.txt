@@ -1,0 +1,16 @@
+
+1. Understand component driven design and how to use it in Flutter.
+2. Learn how to create reusable components in Flutter.
+3. Understand how to add assets & images the correct way.
+4. Understand bottom navbar, and how to implement it in Flutter (make it interactive).
+
+// PURE DART CODE
+5. Demonstrate SOLID principles in dart code.
+
+Components 
+
+-> Page -> Components -> Atoms
+
+1. Page: A page is a complete screen in the app, such as a home page or a sign-in page. It is made up of multiple components and represents a specific view in the app.
+2. Components: Components are reusable building blocks that can be used across different pages. They can be made up of smaller components or atoms. Examples of components include buttons, input fields, and cards.
+3. Atoms: Atoms are the smallest building blocks in component-driven design. They are simple, indivisible elements that cannot be broken down further. Examples of atoms include text, icons, and colors.
